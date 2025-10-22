@@ -1,1 +1,0 @@
-from .transformer import register_transformer_metadata
