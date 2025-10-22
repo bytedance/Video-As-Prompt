@@ -252,13 +252,14 @@ bash examples/training/sft/cogvideox/vap_mot/train_multi_node.sh xxx:xxx:xxx:xxx
 * All scripts read shared config (datasets, output dir, batch size, etc.); edit the script to override.
 * Please edit `train_multi_node*.sh` base on your environment if you want to change the distributed settings (e.g., gpu num, node num, master addr/port, etc.).
 
+<!-- 
 ## 🔗 BibTeX
 
 If you found this repository helpful, please cite our report:
 
 ```bibtex
 
-```
+``` -->
 
 ## Acknowledgements
 
