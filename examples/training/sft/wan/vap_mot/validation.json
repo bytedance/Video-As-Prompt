@@ -1,0 +1,14 @@
+{
+  "root": "data/VAP-Data",
+  "val_data": [
+    "vap_data.csv"
+  ],
+  "ref_videos_num": 10,
+  "sample_ref_videos_num": 1,
+  "mask_ref_ratio": 0.0,
+  "num_frames": 49,
+  "height": 480,
+  "width": 832,
+  "num_inference_steps": 30,
+  "frames_selection": "evenly"
+}
