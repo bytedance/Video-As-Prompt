@@ -187,3 +187,8 @@ outputs*
 !requirements.txt
 !LICENSE
 !finetrainers/data
+
+!diffusers/*.py
+!diffusers/**/*.py
+!diffusers/*.txt
+!diffusers/**/*.txt
