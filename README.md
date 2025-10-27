@@ -12,7 +12,7 @@
   <a href=https://huggingface.co/collections/ByteDance/video-as-prompt target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Models-d96902.svg height=22px></a>
   <a href=https://huggingface.co/datasets/BianYx/VAP-Data  target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-276cb4.svg height=22px></a>
   <a href=https://github.com/bytedance/Video-As-Prompt target="_blank"><img src= https://img.shields.io/badge/Code-black.svg?logo=github height=22px></a>
-  <a href=https://yxbian23.github.io/ target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a>
+  <a href=https://arxiv.org/pdf/2510.20888 target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a>
   <!-- <a href=https://yxbian23.github.io/ target="_blank"><img src=https://img.shields.io/badge/Twitter-grey.svg?logo=x height=22px></a> -->
   <!-- <a href="https://opensource.org/licenses/Apache">
     <img src="https://img.shields.io/badge/License-Apache%202.0-lightgray">
@@ -28,7 +28,7 @@
 
 - Oct 24, 2025: 📖 We release the first unified semantic video generation model, [Video-As-Prompt (VAP)](https://github.com/bytedance/Video-As-Prompt)!
 - Oct 24, 2025: 🤗 We release the [VAP-Data](https://huggingface.co/datasets/BianYx/VAP-Data), the largest semantic-controlled video generation datasets with more than $100K$ samples!
-- Oct 24, 2025: 👋 We present the [technical report](https://yxbian23.github.io/) of Video-As-Prompt, please check out the details and spark some discussion!
+- Oct 24, 2025: 👋 We present the [technical report](https://arxiv.org/pdf/2510.20888) of Video-As-Prompt, please check out the details and spark some discussion!
 
       
 
@@ -145,7 +145,7 @@ data/
 
 ### Code Usage
 
-We mainly implement our code based on [diffusers](https://github.com/huggingface/diffusers) and [finetrainers](https://github.com/huggingface/finetrainers) for their modular design.
+We mainly implement our code based on [Diffusers](https://github.com/huggingface/diffusers) and [Finetrainers](https://github.com/huggingface/finetrainers) for their modular design.
 
 #### Minimal Demo
 
@@ -252,21 +252,27 @@ bash examples/training/sft/cogvideox/vap_mot/train_multi_node.sh xxx:xxx:xxx:xxx
 * All scripts read shared config (datasets, output dir, batch size, etc.); edit the script to override.
 * Please edit `train_multi_node*.sh` base on your environment if you want to change the distributed settings (e.g., gpu num, node num, master addr/port, etc.).
 
-<!-- 
+
 ## 🔗 BibTeX
 
-If you found this repository helpful, please cite our report:
+❤️ If you found this repository helpful, please give us a star and cite our report:
 
 ```bibtex
-
-``` -->
+@article{bian2025videoasprompt,
+  title   = {Video-As-Prompt: Unified Semantic Control for Video Generation},
+  author  = {Yuxuan Bian and Xin Chen and Zenan Li and Tiancheng Zhi and Shen Sang and Linjie Luo and Qiang Xu},
+  journal = {arXiv preprint arXiv:2510.20888},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2510.20888}
+}
+```
 
 ## Acknowledgements
 
-We would like to thank the contributors to the [finetrainers](https://github.com/huggingface/finetrainers), [Diffusers](https://github.com/huggingface/diffusers), [CogVideoX](https://github.com/zai-org/CogVideo), and [Wan](https://github.com/Wan-Video/Wan2.1) repositories, for their open research and exploration.
+We would like to thank the contributors to the [Finetrainers](https://github.com/huggingface/finetrainers), [Diffusers](https://github.com/huggingface/diffusers), [CogVideoX](https://github.com/zai-org/CogVideo), and [Wan](https://github.com/Wan-Video/Wan2.1) repositories, for their open research and exploration.
 
 
-<!-- ## Star History
+## Star History
 
 <a href="https://star-history.com/#bytedance/Video-As-Prompt&Date">
  <picture>
@@ -274,4 +280,4 @@ We would like to thank the contributors to the [finetrainers](https://github.com
    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=bytedance/Video-As-Prompt&type=Date" />
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=bytedance/Video-As-Prompt&type=Date" />
  </picture>
-</a> -->
+</a>
