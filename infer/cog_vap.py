@@ -76,8 +76,22 @@ if __name__ == "__main__":
     vae = AutoencoderKLCogVideoX.from_pretrained(model_id, subfolder="vae", torch_dtype=torch.bfloat16)
     transformer = CogVideoXTransformer3DMOTModel.from_pretrained(model_id, subfolder="transformer", torch_dtype=torch.bfloat16)
     pipe = CogVideoXImageToVideoMOTPipeline.from_pretrained(
-        model_id, vae=vae, transformer=transformer, torch_dtype=torch.bfloat16
+        model_id, 
+        vae=vae, 
+        transformer=transformer, 
+        torch_dtype=torch.bfloat16
     ).to("cuda")
+
+    # pipe = CogVideoXImageToVideoMOTPipeline.from_pretrained(
+    #     model_id, 
+    #     vae=vae, 
+    #     transformer=transformer, 
+    #     torch_dtype=torch.bfloat16
+    # )
+    # # offload base on module, max around 30GB
+    # pipe.enable_model_cpu_offload()
+    # # offload base on layer, max around 7.5GB
+    # # pipe.enable_sequential_cpu_offload()
 
     ref_video = load_video(ref_video_path)
     image = Image.open(target_image_path).convert("RGB")
