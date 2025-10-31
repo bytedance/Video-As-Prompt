@@ -87,6 +87,19 @@ if __name__ == "__main__":
         torch_dtype=torch.bfloat16,
     ).to("cuda")
 
+    # pipe = WanImageToVideoMOTPipeline.from_pretrained(
+    #     model_id,
+    #     vae=vae,
+    #     image_encoder=image_encoder,
+    #     transformer=transformer,
+    #     torch_dtype=torch.bfloat16,
+    #     low_cpu_mem_usage=True,
+    # )
+    # # offload base on module
+    # # pipe.enable_model_cpu_offload()
+    # # offload base on layer
+    # pipe.enable_sequential_cpu_offload()
+
     ref_video = load_video(ref_video_path)
     image = Image.open(target_image_path).convert("RGB")
 
