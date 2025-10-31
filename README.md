@@ -26,6 +26,7 @@
 
 ## 🔥 News
 
+- Oct 31, 2025: ❤️ Thanks to @gangxu822 reminder, we managed to **lower the memory cost of both variant CogVideoX and Wan2.1 from 40GB/64GB to max around 8GB!**
 - Oct 24, 2025: 📖 We release the first unified semantic video generation model, [Video-As-Prompt (VAP)](https://github.com/bytedance/Video-As-Prompt)!
 - Oct 24, 2025: 🤗 We release the [VAP-Data](https://huggingface.co/datasets/BianYx/VAP-Data), the largest semantic-controlled video generation datasets with more than $100K$ samples!
 - Oct 24, 2025: 👋 We present the [technical report](https://arxiv.org/pdf/2510.20888) of Video-As-Prompt, please check out the details and spark some discussion!
@@ -185,6 +186,63 @@ output_frames = pipe(
     use_dynamic_cfg=True,
 ).frames[0]
 ```
+#### Inference Memory Optimization
+
+Based on diffusers' `pipe.enable_sequential_cpu_offload()` function，we lower the memory cost of **CogVideoX** version on **NVIDIA A100** from the current **40GB** to max around **7.5GB**, and the memory cost of **Wan2.1** version on **A100** from the current **64GB** to max around **8GB**. Detailed update: 
+1. delete the`.to("cuda")` initialization
+2. use the `pipe.enable_model_cpu_offload()` for  module offload **(load one module at a time, medium memory save)** or `pipe.enable_sequential_cpu_offload()` for layer offload **(load one layer at a time, minimum memory save)**
+
+* CogVideoX
+   Current Version：
+    ```python
+    pipe = WanImageToVideoMOTPipeline.from_pretrained(
+            model_id,
+            vae=vae,
+            image_encoder=image_encoder,
+            transformer=transformer,
+            torch_dtype=torch.bfloat16,
+        ).to("cuda")
+    ```
+    **Lower Memory Version：**
+    ```python
+    pipe = CogVideoXImageToVideoMOTPipeline.from_pretrained(
+        model_id, 
+        vae=vae, 
+        transformer=transformer, 
+        torch_dtype=torch.bfloat16
+    )
+    # offload base on module, max around 30GB
+    # pipe.enable_model_cpu_offload()
+    # offload base on layer, max around 7.5GB
+    pipe.enable_sequential_cpu_offload()
+    ```
+
+* Wan2.1
+    Current Version：
+    ```python
+    pipe = WanImageToVideoMOTPipeline.from_pretrained(
+            model_id,
+            vae=vae,
+            image_encoder=image_encoder,
+            transformer=transformer,
+            torch_dtype=torch.bfloat16,
+        ).to("cuda")
+    ```
+    **Lower Memory Version：**
+    ```python
+    pipe = WanImageToVideoMOTPipeline.from_pretrained(
+            model_id,
+            vae=vae,
+            image_encoder=image_encoder,
+            transformer=transformer,
+            torch_dtype=torch.bfloat16,
+            low_cpu_mem_usage=True,
+        )
+    # offload base on modules, max around 44GB
+    # pipe.enable_model_cpu_offload()
+    # offload base on layers, max around 8GB
+    pipe.enable_sequential_cpu_offload()
+    ```
 
 #### Benchmark Inference
 You can alse refer the following code for benchmark inference. Then you can use [Vbench](https://github.com/Vchitect/VBench) to evaluate the results.
