@@ -26,7 +26,8 @@
 
 ## 🔥 News
 
-- Jan 31, 2025: 🎉 Community contribution: [@okdalto](https://github.com/okdalto) released a [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt) of Video-As-Prompt!
+- Jan 31, 2026: 🚀 Thanks to [@Artiprocher](https://github.com/Artiprocher), Video-As-Prompt has been integrated into [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio) ([PR #1034](https://github.com/modelscope/DiffSynth-Studio/pull/1034)) with support for Inference, Full Training, Full Training Validation, LoRA Training, and LoRA Training Validation. Check it out!
+- Jan 31, 2026: 🎉 Community contribution: [@okdalto](https://github.com/okdalto) released a [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt) of Video-As-Prompt!
 - Oct 31, 2025: ❤️ Thanks to [@gangxu822](https://github.com/gangxu822) reminder, we managed to **lower the memory cost of both variant CogVideoX and Wan2.1 from 40GB/64GB to max around 8GB!**
 - Oct 24, 2025: 📖 We release the first unified semantic video generation model, [Video-As-Prompt (VAP)](https://github.com/bytedance/Video-As-Prompt)!
 - Oct 24, 2025: 🤗 We release the [VAP-Data](https://huggingface.co/datasets/BianYx/VAP-Data), the largest semantic-controlled video generation datasets with more than $100K$ samples!
@@ -339,9 +340,10 @@ bash examples/training/sft/cogvideox/vap_mot/train_multi_node.sh xxx:xxx:xxx:xxx
 
 We would like to thank the contributors to the [Finetrainers](https://github.com/huggingface/finetrainers), [Diffusers](https://github.com/huggingface/diffusers), [CogVideoX](https://github.com/zai-org/CogVideo), and [Wan](https://github.com/Wan-Video/Wan2.1) repositories for their open research and exploration.
 
-We also thank [@okdalto](https://github.com/okdalto) for creating the [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt), making Video-As-Prompt more accessible to the ComfyUI community.
 
-
+We also thank:
+- [@Artiprocher](https://github.com/Artiprocher) and the [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio) team for integrating Video-As-Prompt with comprehensive training and inference support.
+- [@okdalto](https://github.com/okdalto) for creating the [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt), making Video-As-Prompt more accessible to the ComfyUI community.
 ## License
 ```
 Copyright 2025 Bytedance Ltd. and/or its affiliates
