@@ -26,7 +26,8 @@
 
 ## 🔥 News
 
-- Oct 31, 2025: ❤️ Thanks to @gangxu822 reminder, we managed to **lower the memory cost of both variant CogVideoX and Wan2.1 from 40GB/64GB to max around 8GB!**
+- Jan 31, 2025: 🎉 Community contribution: [@okdalto](https://github.com/okdalto) released a [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt) of Video-As-Prompt!
+- Oct 31, 2025: ❤️ Thanks to [@gangxu822](https://github.com/gangxu822) reminder, we managed to **lower the memory cost of both variant CogVideoX and Wan2.1 from 40GB/64GB to max around 8GB!**
 - Oct 24, 2025: 📖 We release the first unified semantic video generation model, [Video-As-Prompt (VAP)](https://github.com/bytedance/Video-As-Prompt)!
 - Oct 24, 2025: 🤗 We release the [VAP-Data](https://huggingface.co/datasets/BianYx/VAP-Data), the largest semantic-controlled video generation datasets with more than $100K$ samples!
 - Oct 24, 2025: 👋 We present the [technical report](https://arxiv.org/pdf/2510.20888) of Video-As-Prompt, please check out the details and spark some discussion!
@@ -116,6 +117,16 @@ ckpts/
       ├── transformer
       ├── ...
 ```
+
+## 🌐 Community Implementations
+
+We appreciate the community's efforts in extending Video-As-Prompt to different platforms!
+
+| Platform | Author | Repository |
+|----------|--------|------------|
+| ComfyUI  | [@okdalto](https://github.com/okdalto) | [ComfyUI-Video-As-Prompt](https://github.com/okdalto/ComfyUI-Video-As-Prompt) |
+
+> 💡 If you've built an implementation for other platforms, feel free to open a PR to add it here!
 
 ## 🤗 Get Started with Video-As-Prompt
 
@@ -316,18 +327,20 @@ bash examples/training/sft/cogvideox/vap_mot/train_multi_node.sh xxx:xxx:xxx:xxx
 ❤️ If you found this repository helpful, please give us a star and cite our report:
 
 ```bibtex
-@article{bian2025videoasprompt,
-  title   = {Video-As-Prompt: Unified Semantic Control for Video Generation},
-  author  = {Yuxuan Bian and Xin Chen and Zenan Li and Tiancheng Zhi and Shen Sang and Linjie Luo and Qiang Xu},
-  journal = {arXiv preprint arXiv:2510.20888},
-  year    = {2025},
-  url     = {https://arxiv.org/abs/2510.20888}
+@article{bian2025video,
+  title={Video-As-Prompt: Unified Semantic Control for Video Generation},
+  author={Bian, Yuxuan and Chen, Xin and Li, Zenan and Zhi, Tiancheng and Sang, Shen and Luo, Linjie and Xu, Qiang},
+  journal={arXiv preprint arXiv:2510.20888},
+  year={2025}
 }
 ```
 
 ## Acknowledgements
 
-We would like to thank the contributors to the [Finetrainers](https://github.com/huggingface/finetrainers), [Diffusers](https://github.com/huggingface/diffusers), [CogVideoX](https://github.com/zai-org/CogVideo), and [Wan](https://github.com/Wan-Video/Wan2.1) repositories, for their open research and exploration.
+We would like to thank the contributors to the [Finetrainers](https://github.com/huggingface/finetrainers), [Diffusers](https://github.com/huggingface/diffusers), [CogVideoX](https://github.com/zai-org/CogVideo), and [Wan](https://github.com/Wan-Video/Wan2.1) repositories for their open research and exploration.
+
+We also thank [@okdalto](https://github.com/okdalto) for creating the [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt), making Video-As-Prompt more accessible to the ComfyUI community.
+
 
 ## License
 ```
