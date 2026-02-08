@@ -26,6 +26,7 @@
 
 ## 🔥 News
 
+- Feb 08, 2026: 🎉 Our [Video-As-Prompt](https://openreview.net/forum?id=8FihPljvWf) has been accepted by [ICLR 2026](https://iclr.cc/Conferences/2026)! See you in Brazil! 🇧🇷
 - Jan 31, 2026: 🚀 Thanks to [@Artiprocher](https://github.com/Artiprocher), Video-As-Prompt has been integrated into [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio) ([PR #1034](https://github.com/modelscope/DiffSynth-Studio/pull/1034)) with support for Inference, Full Training, Full Training Validation, LoRA Training, and LoRA Training Validation. Check it out!
 - Jan 31, 2026: 🎉 Community contribution: [@okdalto](https://github.com/okdalto) released a [ComfyUI implementation](https://github.com/okdalto/ComfyUI-Video-As-Prompt) of Video-As-Prompt!
 - Oct 31, 2025: ❤️ Thanks to [@gangxu822](https://github.com/gangxu822) reminder, we managed to **lower the memory cost of both variant CogVideoX and Wan2.1 from 40GB/64GB to max around 8GB!**
