@@ -38,9 +38,13 @@ def main():
         args = BaseArgs()
 
         argv = [y.strip() for x in sys.argv for y in x.split()]
-        training_type_index = argv.index("--training_type")
-        if training_type_index == -1:
-            raise ValueError("Training type not provided in command line arguments.")
+        try:
+            training_type_index = argv.index("--training_type")
+        except ValueError:
+            raise ValueError("Training type not provided in command line arguments. Use --training_type <type>")
+
+        if training_type_index + 1 >= len(argv):
+            raise ValueError("Training type value is missing after --training_type argument.")
 
         training_type = argv[training_type_index + 1]
         training_cls = None
