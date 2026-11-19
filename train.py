@@ -10,6 +10,7 @@
 # This modified file is released under the same license.
 
 
+import argparse
 import sys
 import traceback
 
@@ -37,12 +38,10 @@ def main():
     try:
         args = BaseArgs()
 
-        argv = [y.strip() for x in sys.argv for y in x.split()]
-        training_type_index = argv.index("--training_type")
-        if training_type_index == -1:
-            raise ValueError("Training type not provided in command line arguments.")
-
-        training_type = argv[training_type_index + 1]
+        type_parser = argparse.ArgumentParser(add_help=False)
+        type_parser.add_argument("--training_type", required=True)
+        known_args, _ = type_parser.parse_known_args(sys.argv[1:])
+        training_type = known_args.training_type
         training_cls = None
         if training_type == TrainingType.LORA:
             training_cls = SFTLowRankConfig
